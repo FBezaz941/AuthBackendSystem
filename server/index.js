@@ -49,3 +49,4 @@ mongoose.connect(
 
 app.use("/auth", require("./routers/userRouter"));
 app.use("/customer", require("./routers/customerRouter"));
+app.use("/courier", require("./routers/courierRouter"));

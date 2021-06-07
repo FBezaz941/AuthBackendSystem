@@ -2,6 +2,8 @@ import React, {useContext, useState } from "react";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
+import { Button, Form } from "react-bootstrap";
+import Wave from "react-wavify"; 
 
 
 export default function Register() {
@@ -25,20 +27,37 @@ export default function Register() {
     }
   }
   return (
-    <div>
-      <h1>Register a new account</h1>
-      <form onSubmit={register}>
-        <input type="email" placeholder="Email" 
+    <div id="contact">
+      
+      <Wave
+        className="wave"
+        fill="#140a42"
+        paused={false}
+        options={{
+          height: 50,
+          amplitude: 100,
+          speed: 0.1,
+          points: 5
+        }}/>
+      <Form onSubmit={register}>
+        <h1>Become a member!</h1>
+
+        <input type="email" placeholder="Enter email" 
         onChange={(e)=> setEmail(e.target.value)}
-        value={email}/>
+        value={email}
+        required/>
+        
+        
         <input type="Password" placeholder="Password"
         onChange={(e)=> setPassword(e.target.value)}
-        value={password} />
+        value={password} 
+        required/>
         <input type="password" placeholder="Verify password" 
         onChange={(e)=> setPasswordVerify(e.target.value)}
-        value={passwordVerify}/>
-        <button type="submit">Register</button>
-      </form>
+        value={passwordVerify}
+        required/>
+        <Button variant="outline-dark"  type="submit">Register</Button>
+      </Form>
     </div>
   );
 }

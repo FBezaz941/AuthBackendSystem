@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function CustomerList({ customers }) {
   function renderCustomers() {
     return customers.map((customer, i) => {

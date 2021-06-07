@@ -1,5 +1,6 @@
 import React from "react";
 import Router from "./Router";
+import "./styles.css";
 import axios from "axios";
 import { AuthContextProvider } from "./context/AuthContext";
 
